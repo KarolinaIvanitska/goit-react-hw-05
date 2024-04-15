@@ -1,0 +1,14 @@
+.ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 30px;
+  color: #242424;
+}
+
+.name {
+  font-size: 30px;
+  color: #242424;
+}

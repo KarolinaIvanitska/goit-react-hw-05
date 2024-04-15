@@ -19,11 +19,7 @@ a {
 }
 
 body {
-  /* margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh; */
+  background-color: rgba(1, 19, 49, 0.558);
 }
 
 h1 {
@@ -58,6 +54,7 @@ button {
 
 .outlet {
   background-color: rgba(196, 218, 255, 0.837);
+
   padding: 10px;
 }
 
