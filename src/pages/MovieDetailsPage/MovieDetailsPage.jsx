@@ -17,7 +17,9 @@ const MovieDetailsPage = () => {
   return (
     <>
       <div className={css.card}>
-        <Link to="/">Back </Link>
+        <Link to="/">
+          <button> Go back</button>
+        </Link>
         <div>
           <img
             className={css.img}

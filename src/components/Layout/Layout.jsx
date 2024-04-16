@@ -8,7 +8,6 @@ const Layout = () => {
       <Navigation />
       <section className="outlet">
         <Suspense>
-          {" "}
           <Outlet />
         </Suspense>
       </section>
