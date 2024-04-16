@@ -50,3 +50,17 @@ export const fetchMovieReviews = async (movieId) => {
   });
   return response.data;
 };
+
+export const fetchSearchMovies = async (query) => {
+  const response = await axios.get(`3/search/movie?query=${query}`, {
+    headers: {
+      Authorization: API_KEY,
+    },
+    params: {
+      language: "en-US",
+      page: 1,
+      include_adult: "false",
+    },
+  });
+  return response.data;
+};
