@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, Outlet, useParams } from "react-router-dom";
 import { fetchMoviesById } from "../../api/api";
 import css from "./MovieDetails.module.css";
+import { Suspense } from "react";
 
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
@@ -48,9 +49,9 @@ const MovieDetailsPage = () => {
           <Link to="reviews"> Reviews</Link>
         </li>
       </ul>
-      <div>
+      <Suspense>
         <Outlet />
-      </div>
+      </Suspense>
     </>
   );
 };
