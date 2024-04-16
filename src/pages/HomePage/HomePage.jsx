@@ -15,7 +15,7 @@ const HomePage = () => {
         {films.map((film) => (
           <li key={film.id}>
             <Link to={"/movies/" + film.id.toString()} className={css.name}>
-              {film.title}{" "}
+              {film.title}
             </Link>
           </li>
         ))}
