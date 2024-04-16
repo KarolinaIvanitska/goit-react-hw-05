@@ -24,3 +24,29 @@ export const fetchMoviesById = async (movieId) => {
   });
   return response.data;
 };
+
+export const fetchMovieCast = async (movieId) => {
+  const response = await axios.get(`3/movie/${movieId}/credits`, {
+    headers: {
+      Authorization: API_KEY,
+    },
+    params: {
+      language: "en-US",
+      page: 1,
+    },
+  });
+  return response.data;
+};
+
+export const fetchMovieReviews = async (movieId) => {
+  const response = await axios.get(`3/movie/${movieId}/reviews`, {
+    headers: {
+      Authorization: API_KEY,
+    },
+    params: {
+      language: "en-US",
+      page: 1,
+    },
+  });
+  return response.data;
+};
