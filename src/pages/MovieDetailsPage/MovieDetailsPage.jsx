@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { Link, Outlet, useParams } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
+import { Link, Outlet, useLocation, useParams } from "react-router-dom";
 import { fetchMoviesById } from "../../api/api";
 import css from "./MovieDetails.module.css";
 import { Suspense } from "react";
@@ -7,6 +7,8 @@ import { Suspense } from "react";
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
+  const location = useLocation();
+  const goBackRef = useRef(location.state?.from || "/");
   useEffect(() => {
     fetchMoviesById(movieId).then((response) => setMovie(response));
   }, [movieId]);
@@ -17,7 +19,7 @@ const MovieDetailsPage = () => {
   return (
     <>
       <div className={css.card}>
-        <Link to="/">
+        <Link to={goBackRef.current || "/"}>
           <button> Go back</button>
         </Link>
         <div>
